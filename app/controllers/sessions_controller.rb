@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
     user = User.find_or_create_by(:uid => auth['uid'])
     user.name = auth['info']['name']
+    session[:user_id] = user[:id]
 
   end
 
